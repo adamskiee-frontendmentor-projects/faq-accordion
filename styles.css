@@ -12,16 +12,19 @@
     padding: 0;
     margin: 0;
 }
+
 :root {
     --white: hsl(0, 100%, 100%);
     --purple-100: hsl(275, 100%, 97%);
     --purple-600: hsl(292, 16%, 49%);
+    --purple-800: hsl(281, 82%, 54%);
     --purple-950: hsl(292, 42%, 14%);
 }
-.question-section:not(:first-child) p.answer {
-    display: none;
-    grid-area: 0;
+
+h1 {
+    font-size: clamp(2rem, 9vw, 3.5rem);
 }
+
 body {
     background: var(--purple-100) url(assets/images/background-pattern-mobile.svg) no-repeat top; 
     max-width: 100%;
@@ -38,42 +41,76 @@ header {
     justify-content: center;
 }
 
+header > img {
+    height: clamp(1.5rem, 6vw, 2rem);
+    width: clamp(1.5rem, 6vw, 2rem);
+}
+
+
+
 .container {
     width: 100%;
     background-color: var(--white);
-    max-width: clamp(20rem, 89vw, 22rem);
-    padding: 1.50rem 1.75rem;
+    max-width: clamp(20rem, 89vw, 34rem);
+    padding-block: clamp(1.25rem, 8vw, 2.25rem);
+    padding-inline: clamp(1.75rem, 7vw, 2.25rem);
     border-radius: 10px;
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
+    box-shadow: 0px 1px 30px 0px rgba(0, 0, 0, 0.2);
 }
 
-header > img {
-    height: 1.5rem;
-    width: 1.5rem;
-}
 .questions {
     display: flex;
     flex-direction: column;
-    gap: 0.75rem
+    gap: .80rem;
 }
-.question-section {
+
+.question__section {
     display: grid;
     grid-template: auto auto / 1fr 30px;
     align-items: center;
     justify-content: center;
     gap: 1.5rem;
 }
-.answer {
-    grid-column: span 2;
-    font-size: .875rem;
-    color: var(--purple-600);
-    margin-bottom: 2rem;
-}
-.question-section:last-of-type {
-    margin-bottom: -1.5rem;
-}
-.question {
-    font-weight: 500;
+    .question__section:last-of-type {
+        margin-block-end: -1.5rem;
+    }
+    
+    .question__section:not(:first-child) p.question__answer {
+        display: none;
+    }
+    
+    .question__answer {
+        grid-column: span 2;
+        font-size: .875rem;
+        color: var(--purple-600);
+        margin-block-end: 2rem;
+        line-height: 1.5;
+    }
+
+    .active {
+        display: block!important;
+    }
+
+    .question__text {
+        font-weight: 500;
+        cursor: pointer;
+    }
+
+    .question__text:hover {
+        color: var(--purple-800);
+    }
+
+@media only screen and (min-width: 376px) {
+    body {
+        background: var(--purple-100) url(assets/images/background-pattern-desktop.svg) no-repeat top; 
+    }
+    .question__section {
+        gap: 1rem;
+    }
+    .container {
+        /* gap: 2rem; */
+    }
 }

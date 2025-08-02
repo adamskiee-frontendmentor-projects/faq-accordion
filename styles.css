@@ -90,17 +90,14 @@ header > img {
         line-height: 1.5;
     }
 
-    .active {
-        display: block!important;
-    }
-
     .question__text {
         font-weight: 500;
         cursor: pointer;
     }
 
-    .question__text:hover {
+    .question__text:focus {
         color: var(--purple-800);
+        outline:none;
     }
 
 @media only screen and (min-width: 376px) {
@@ -109,8 +106,5 @@ header > img {
     }
     .question__section {
         gap: 1rem;
-    }
-    .container {
-        /* gap: 2rem; */
     }
 }

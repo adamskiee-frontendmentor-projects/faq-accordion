@@ -1,13 +1,14 @@
 const questions = document.querySelector(".questions");
 let activeSection = questions.firstElementChild;
 
-console.log(activeSection);
-questions.addEventListener("click", (event)=>{
-    // showAnswer();
+questions.addEventListener("keypress", eventFunction, false );
+questions.addEventListener("click", eventFunction, false );
+
+function eventFunction(event){
     if(event.target.classList.contains('question__text')) {
         showAnswer(event.target.closest('.question__section'))
     }
-}, {capture: true})
+}
 
 function showAnswer(section) {
     if(activeSection == section) {

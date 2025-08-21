@@ -38,8 +38,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [GitHub Repository](https://github.com/Adamskiee/faq-accordion)
-- Live Site URL: [Live Website](https://adamskiee.github.io/faq-accordion/)
+- Solution URL: [GitHub Repository](https://github.com/adamskiee-frontendmentor-projects/faq-accordion)
+- Live Site URL: [Live Website](https://adamskiee-frontendmentor-projects.github.io/faq-accordion/)
 
 ## My process
 
